@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5830DFA5-80C2-4F41-A927-A24D4A65437F}</ProjectGuid>
+    <ProjectGuid>{B3DA6C3D-38AD-49C9-86BE-A6D36E5361C6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UDPNumberSender</RootNamespace>
-    <AssemblyName>UDPNumberSender</AssemblyName>
+    <RootNamespace>UDPNumberReciever</RootNamespace>
+    <AssemblyName>UDPNumberReciever</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UDPNumberSenderBroad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

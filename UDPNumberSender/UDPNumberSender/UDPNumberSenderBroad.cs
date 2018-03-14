@@ -9,34 +9,28 @@ using System.Threading;
 
 namespace UDPNumberSender
 {
-    class Program
+    class UDPNumberSenderBroad
     {
-        void Main(string[] args)
+        static void Main(string[] args)
         {
+            UdpClient Udpsender = new UdpClient();
+            Udpsender.EnableBroadcast = true;
+            IPAddress ip = IPAddress.Parse("127.0.0.1");
+            IPEndPoint endpoint = new IPEndPoint(ip, 9876);
+
             int number = 0;
-
-            IPAddress ip = IPAddress.Parse("127.0.0.1"); 
-            UdpClient udpClient = new UdpClient("127.0.0.1", 9999);
-
-            IPEndPoint RemoteIpEndPoint = new IPEndPoint(ip, 9999); 
-
-
-
-
             while(true)
             {
-                Console.WriteLine("The number is:" + number);
                 number++;
                 string sendData = "The number is:" + number;
                 Byte[] sendBytes = Encoding.ASCII.GetBytes(sendData);
-
-                udpClient.Send(sendBytes, sendBytes.Length);
+                Udpsender.Send(sendBytes, sendBytes.Length, endpoint);
                 Thread.Sleep(100);
             }
 
 
-
-            //udpClient.Connect(RemoteIpEndPoint); //
+           
         }
+       
     }
 }
