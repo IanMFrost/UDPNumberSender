@@ -13,10 +13,9 @@ namespace UDPNumberSender
     {
         static void Main(string[] args)
         {
-            UdpClient Udpsender = new UdpClient(1111);
+            UdpClient Udpsender = new UdpClient(0);
             Udpsender.EnableBroadcast = true;
-            IPAddress ip = IPAddress.Parse("192.168.6.122");
-            IPEndPoint endpoint = new IPEndPoint(ip, 1111);
+            IPEndPoint endpoint = new IPEndPoint(IPAddress.Broadcast, 1111);
 
             int number = 0;
             while(true)
